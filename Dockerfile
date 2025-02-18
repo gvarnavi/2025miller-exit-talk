@@ -1,5 +1,6 @@
 # slim uv base image
-FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+FROM python:3.12-slim-bookworm
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # uv optimization env variables
 ENV UV_COMPILE_BYTECODE=1
